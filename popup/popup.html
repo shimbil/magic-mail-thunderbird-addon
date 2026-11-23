@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- ==========================================================================
+     Magic Mail - Main Browser Action Popup
+     Quick toggle for Auto-Attach, feature status, and scheduled messages manager.
+     Developer: Al Shimbil Khan <shimbilmax@gmail.com> | +8801516711976
+     ========================================================================== -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Mail</title>
+  <link rel="stylesheet" href="../styles/variables.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+
+<body data-theme="light">
+  <div class="magicmail-app">
+    <header class="app-header">
+      <div class="brand-wrapper">
+        <img src="../icons/icon-48.png" alt="Magic Mail" class="brand-icon">
+        <div class="brand-titles">
+          <div class="brand-name">Magic <span>Mail</span></div>
+          <div class="brand-tagline">Email Productivity</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button type="button" class="btn-icon" id="themeToggleBtn" title="Toggle Light / Dark Mode">
+          <span id="themeToggleIcon">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </span>
+        </button>
+        <button type="button" class="btn-icon" id="headerSettingsBtn" title="Open Settings">
+          <svg class="icon-svg" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="app-body popup-body">
+      <div class="card">
+        <div class="card-title">
+          <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+          <span>Active Features</span>
+        </div>
+        <div class="feature-summary-list">
+          <div class="feature-summary-row">
+            <span class="feature-summary-name">
+              <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+              </svg>
+              Auto-Attach Files
+            </span>
+            <span class="badge" id="autoAttachBadge">Off</span>
+          </div>
+          <div class="feature-summary-row">
+            <span class="feature-summary-name">
+              <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              Mail Scheduling
+            </span>
+            <span class="badge" id="schedulingBadge">Off</span>
+          </div>
+          <div class="feature-summary-row">
+            <span class="feature-summary-name">
+              <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              Quick Templates
+            </span>
+            <span class="badge" id="templatesBadge">Off</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title-row">
+          <div class="card-title">
+            <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span>Scheduled</span>
+          </div>
+          <div class="segmented-switch" role="tablist">
+            <button type="button" class="seg-btn active" id="upcomingTabBtn" role="tab">
+              <span>Upcoming</span>
+              <span class="badge badge-primary" id="scheduledCountBadge">0</span>
+            </button>
+            <button type="button" class="seg-btn" id="historyTabBtn" role="tab">
+              <span>History</span>
+              <span class="badge badge-primary" id="historyCountBadge">0</span>
+            </button>
+          </div>
+        </div>
+        <div id="popupAlert" class="alert alert-danger hidden" style="margin-bottom: 8px;" role="alert"></div>
+        <div id="upcomingPane">
+          <div class="scheduled-list" id="scheduledList"></div>
+        </div>
+        <div id="historyPane" class="hidden">
+          <div class="history-toolbar hidden" id="historyToolbar">
+            <span class="history-hint">Recent deliveries</span>
+            <button type="button" class="link-btn" id="clearHistoryBtn">Clear History</button>
+          </div>
+          <div class="scheduled-list" id="historyList"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="popup-footer">
+      <span class="developer-info">By Al Shimbil Khan</span>
+    </footer>
+  </div>
+
+  <script src="../services/storage-service.js"></script>
+  <script src="../services/ui-helpers.js"></script>
+  <script src="popup.js"></script>
+</body>
+
+</html>

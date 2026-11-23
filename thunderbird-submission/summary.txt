@@ -1,0 +1,1 @@
+Magic Mail is a productivity-focused Thunderbird add-on that automatically re-attaches files from the original email when you reply or reply-all, provides mail scheduling with attachments, and offers quick response templates.

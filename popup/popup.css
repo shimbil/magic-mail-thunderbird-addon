@@ -1,0 +1,242 @@
+/* ==========================================================================
+   Magic Mail - Browser Action Popup Styles
+   Developer: Al Shimbil Khan <shimbilmax@gmail.com> | +8801516711976
+   ========================================================================== */
+
+html,
+body {
+  width: 340px;
+  min-width: 340px;
+  max-width: 340px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.popup-body {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.feature-summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.feature-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+
+.feature-summary-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* Scheduled Messages List */
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.card-title-row .card-title {
+  margin-bottom: 0;
+}
+
+.segmented-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+}
+
+.seg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 7px;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.seg-btn.active {
+  background: var(--bg-card);
+  color: var(--primary-text);
+  box-shadow: var(--shadow-sm);
+}
+
+.history-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.history-hint {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.history-error {
+  font-size: 10.5px;
+  color: var(--danger-text);
+  background: var(--danger-light);
+  border: 1px solid var(--danger-border);
+  border-radius: 4px;
+  padding: 3px 6px;
+}
+
+.scheduled-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scheduled-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 9px 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.scheduled-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.scheduled-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.scheduled-subject {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scheduled-meta {
+  font-size: 10.5px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scheduled-time-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.scheduled-time {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: var(--primary-text);
+}
+
+.scheduled-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.scheduled-badges {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.scheduled-edit-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--border-medium);
+}
+
+.scheduled-edit-row input[type="datetime-local"] {
+  flex: 1;
+  min-width: 150px;
+  padding: 4px 6px;
+  font-size: 11px;
+}
+
+.scheduled-edit-row select {
+  width: auto;
+  padding: 4px 6px;
+  font-size: 11px;
+}
+
+.empty-scheduled {
+  text-align: center;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  padding: 10px 4px;
+}
+
+.popup-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-top: 1px solid var(--border-medium);
+  background: var(--bg-card);
+}
+
+.developer-info {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-text);
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Magic Mail - Compose Action Popup Styles
+   Developer: Al Shimbil Khan <shimbilmax@gmail.com> | +8801516711976
+   ========================================================================== */
+
+html,
+body {
+  width: 540px;
+  min-width: 540px;
+  max-width: 540px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.compose-body {
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+
+.full-width-btn {
+  width: 100%;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px 14px;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.empty-state h3 {
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: var(--text-main);
+}
+
+.compose-footnote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 14px;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.compose-footnote-link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--primary-text);
+  cursor: pointer;
+  text-decoration: underline;
+  flex-shrink: 0;
+}

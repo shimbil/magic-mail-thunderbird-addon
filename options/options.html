@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<!-- ==========================================================================
+     Magic Mail - Extension Settings Page (Tab-Based)
+     3-tab workspace: Preferences, Templates, and About.
+     Developer: Al Shimbil Khan <shimbilmax@gmail.com> | +8801516711976
+     ========================================================================== -->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic Mail – Settings</title>
+  <link rel="stylesheet" href="../styles/variables.css">
+  <link rel="stylesheet" href="../styles/base.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+
+<body data-theme="light">
+  <div class="settings-container">
+
+    <!-- Top Header -->
+    <header class="settings-header">
+      <div class="brand-wrapper">
+        <img src="../icons/icon-48.png" alt="Magic Mail" class="brand-icon">
+        <div class="brand-titles">
+          <h1 class="brand-heading">Magic <span>Mail</span></h1>
+          <div class="brand-subheading">Extension Settings &amp; Configuration</div>
+        </div>
+      </div>
+      <button type="button" class="btn-icon" id="settingsThemeToggle" title="Toggle Light / Dark Mode">
+        <span id="themeToggleIcon">
+          <svg class="icon-svg" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </span>
+      </button>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs-nav settings-tabs-nav" role="tablist">
+      <button type="button" class="tab-btn active" data-tab="tab-preferences" role="tab">
+        <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="3" />
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+        </svg>
+        <span>Preferences</span>
+      </button>
+      <button type="button" class="tab-btn" data-tab="tab-templates" role="tab">
+        <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="16" y1="13" x2="8" y2="13" />
+          <line x1="16" y1="17" x2="8" y2="17" />
+        </svg>
+        <span>Templates</span>
+      </button>
+      <button type="button" class="tab-btn" data-tab="tab-about" role="tab">
+        <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="12" y1="16" x2="12" y2="12" />
+          <line x1="12" y1="8" x2="12.01" y2="8" />
+        </svg>
+        <span>About</span>
+      </button>
+    </nav>
+
+    <!-- Global Alert Banner -->
+    <div id="settingsAlert" class="alert hidden" role="alert">
+      <span id="settingsAlertIcon"></span>
+      <div id="settingsAlertMsg"></div>
+    </div>
+
+    <!-- Main Tabbed Content -->
+    <main class="settings-stack">
+
+      <!-- Tab 1: Preferences -->
+      <section id="tab-preferences" class="tab-pane active" role="tabpanel">
+        <div class="settings-card">
+          <div class="settings-card-title">
+            <svg class="icon-svg" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
+            <span>Automation &amp; Preferences</span>
+          </div>
+
+          <div class="setting-list">
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Auto-Attach Original Files</h3>
+                <p>Enable automatically attaching files from the original email when replying.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="autoAttach">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Mail Scheduling</h3>
+                <p>Schedule emails to be sent automatically at a future date and time.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="mailScheduling">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Notify on Success</h3>
+                <p>Show a visual system notification when files are automatically attached.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="notifySuccess">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Quick Template</h3>
+                <p>Allow inserting saved response templates into emails via compose popup and context menu.</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="quickTemplate">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="setting-item">
+              <div class="setting-info">
+                <h3>Console Debug Logs</h3>
+                <p>Print detailed diagnostic information to the browser console (Ctrl+Shift+J).</p>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="debugLogs">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 2: Templates -->
+      <section id="tab-templates" class="tab-pane" role="tabpanel">
+        <div id="quickTemplateDisabledNotice" class="alert alert-warning hidden" role="note">
+          <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <span>Quick Template is currently disabled in Preferences. Enable it to insert templates in compose windows.</span>
+        </div>
+
+        <div class="settings-card" id="templateManager">
+          <div class="settings-card-header">
+            <div class="settings-card-title">
+              <svg class="icon-svg" viewBox="0 0 24 24">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+              <span>Template Manager</span>
+            </div>
+            <div class="template-tools">
+              <button type="button" class="btn-secondary btn-sm" id="exportBtn">
+                <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="17 8 12 3 7 8" />
+                  <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+                <span>Export JSON</span>
+              </button>
+              <button type="button" class="btn-secondary btn-sm" id="importBtn">
+                <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="7 10 12 15 17 10" />
+                  <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                <span>Import JSON</span>
+              </button>
+              <input type="file" id="importFile" accept=".json">
+            </div>
+          </div>
+
+          <div class="templates-topbar">
+            <div class="template-search-wrap">
+              <svg class="icon-svg icon-svg-sm template-search-icon" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <input type="text" id="templateSearchInput" class="template-search-input"
+                placeholder="Search templates...">
+            </div>
+            <select id="templateCategoryFilters" class="template-filter-select"
+              aria-label="Filter templates by category">
+              <option value="All">All Categories</option>
+            </select>
+            <button type="button" class="btn-primary btn-sm" id="toggleTemplateEditorBtn" title="Create a new template">
+              <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg>
+              <span>New</span>
+            </button>
+          </div>
+
+          <div class="templates-workspace">
+            <aside class="templates-sidebar">
+              <div class="templates-sidebar-header">
+                <span>Templates</span>
+                <div class="templates-header-right">
+                  <button type="button" class="link-btn hidden" id="restoreDefaultTemplatesBtn"
+                    title="Restore built-in templates">Restore</button>
+                  <span id="templatesCountBadge" class="badge-subtle">0</span>
+                </div>
+              </div>
+              <div id="templatesList" class="templates-nav-list"></div>
+            </aside>
+
+            <div class="templates-detail-pane">
+              <div id="templateDetailView" class="template-detail-view hidden">
+                <div class="template-detail-header">
+                  <div class="template-detail-titles">
+                    <h3 id="detailTemplateTitle" class="template-detail-title">Subject</h3>
+                    <span id="detailTemplateCategory" class="template-item-category">General</span>
+                  </div>
+                  <div class="template-detail-manage">
+                    <button type="button" class="btn-icon-sm" id="detailEditTemplateBtn" title="Edit template">
+                      <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+                      </svg>
+                    </button>
+                    <button type="button" class="btn-icon-sm btn-icon-danger" id="detailDeleteTemplateBtn"
+                      title="Delete template">
+                      <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                        <polyline points="3 6 5 6 21 6" />
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <div id="detailDeleteConfirmBar" class="template-delete-confirm hidden">
+                  <span>Delete this template?</span>
+                  <div class="template-delete-confirm-btns">
+                    <button type="button" class="btn-ghost btn-sm" id="detailCancelDeleteBtn">Cancel</button>
+                    <button type="button" class="btn-danger btn-sm" id="detailConfirmDeleteBtn">Delete</button>
+                  </div>
+                </div>
+
+                <div id="detailTemplateBody" class="template-detail-body"></div>
+
+                <div class="template-detail-footer">
+                  <button type="button" class="btn-primary btn-sm" id="detailPrimaryUseBtn">
+                    <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <span id="detailPrimaryUseLabel">Use in New Email</span>
+                  </button>
+                </div>
+              </div>
+
+              <div id="templateEditorCard" class="template-editor-pane hidden">
+                <div class="template-editor-header">
+                  <span id="templateEditorHeading" class="template-editor-title">New Template</span>
+                </div>
+                <input type="hidden" id="editingTemplateId" value="">
+                <div class="template-editor-row">
+                  <input type="text" id="newTemplateTitle" placeholder="Template Title..." aria-label="Template Title">
+                  <select id="newTemplateCategory" aria-label="Template Category">
+                    <option value="General">General</option>
+                    <option value="Business">Business</option>
+                    <option value="Updates">Updates</option>
+                    <option value="Follow-Up">Follow-Up</option>
+                    <option value="Outreach">Outreach</option>
+                    <option value="Support">Support</option>
+                    <option value="Personal">Personal</option>
+                  </select>
+                </div>
+                <textarea id="newTemplateBody" class="template-editor-textarea"
+                  placeholder="Write or paste your email template here..."></textarea>
+                <div class="template-editor-actions">
+                  <button type="button" class="btn-ghost btn-sm" id="cancelTemplateEditBtn">Cancel</button>
+                  <button type="button" class="btn-primary btn-sm" id="saveNewTemplateBtn">
+                    <span id="saveTemplateBtnLabel">Save Template</span>
+                  </button>
+                </div>
+              </div>
+
+              <div id="templateEmptyView" class="template-empty-pane hidden">
+                <svg class="icon-svg" style="width: 28px; height: 28px; color: var(--text-muted);" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+                <div id="templateEmptyMessage" class="template-empty-msg">Select a template to preview and use it.</div>
+                <button type="button" class="btn-secondary btn-sm" id="emptyCreateTemplateBtn">+ Create New Template</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tab 3: About / Developer -->
+      <section id="tab-about" class="tab-pane" role="tabpanel">
+        <div class="settings-card developer-card">
+          <div class="developer-card-header">
+            <div class="developer-identity">
+              <div class="developer-monogram" aria-hidden="true">SK</div>
+              <div class="developer-meta">
+                <div class="developer-name-row">
+                  <span class="developer-fullname">Al Shimbil Khan</span>
+                  <span class="developer-role-badge">Developer</span>
+                </div>
+                <div class="developer-tagline">Magic Mail &bull; Thunderbird Email Assistant</div>
+              </div>
+            </div>
+            <span class="developer-version-pill">v1.1</span>
+          </div>
+
+          <div class="developer-contact-grid">
+            <a href="mailto:shimbilmax@gmail.com" class="dev-contact-tile" title="Send Email to shimbilmax@gmail.com">
+              <span class="dev-contact-icon">
+                <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </span>
+              <span class="dev-contact-text">
+                <span class="dev-contact-label">Email</span>
+                <span class="dev-contact-value">shimbilmax@gmail.com</span>
+              </span>
+            </a>
+            <a href="tel:+8801516711976" class="dev-contact-tile" title="Call or WhatsApp +8801516711976">
+              <span class="dev-contact-icon">
+                <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </span>
+              <span class="dev-contact-text">
+                <span class="dev-contact-label">Phone</span>
+                <span class="dev-contact-value">+8801516711976</span>
+              </span>
+            </a>
+            <a href="http://webspl.com" target="_blank" rel="noopener noreferrer" class="dev-contact-tile"
+              title="Visit webspl.com">
+              <span class="dev-contact-icon">
+                <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <line x1="2" y1="12" x2="22" y2="12" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+              </span>
+              <span class="dev-contact-text">
+                <span class="dev-contact-label">Website</span>
+                <span class="dev-contact-value">webspl.com</span>
+              </span>
+            </a>
+          </div>
+
+          <div class="developer-support-strip" id="supportProjectCard">
+            <div class="support-strip-left">
+              <span class="support-heart-badge" aria-hidden="true">
+                <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+              </span>
+              <div class="support-meta">
+                <span class="support-title">Happy Using? Support My Project</span>
+                <span class="support-desc">Help fund updates, improvements &amp; maintenance</span>
+              </div>
+            </div>
+            <div class="support-strip-right">
+              <span class="support-method-pill">bKash (Personal)</span>
+              <span class="support-number">01516711976</span>
+              <button type="button" class="support-copy-btn" data-copy="01516711976" data-copy-label="bKash number"
+                title="Copy bKash Personal number">
+                <svg class="icon-svg icon-svg-sm" viewBox="0 0 24 24">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                </svg>
+                <span class="copy-btn-label">Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="../services/storage-service.js"></script>
+  <script src="../services/ui-helpers.js"></script>
+  <script src="../services/template-manager.js"></script>
+  <script src="options.js"></script>
+</body>
+
+</html>
